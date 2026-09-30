@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>91漫画 - 漫画大全在线阅读_每日更新漫画排行榜</title>
+<meta name="description" content="91漫画(91manhua.cn)每日更新少年漫画、少女漫画、恋爱、悬疑、热血与搞笑漫画，提供漫画简介、章节列表、题材分区与漫画排行榜，手机端自适应，在线阅读导航。">
+<meta name="keywords" content="91漫画,91漫画网,91漫画在线阅读,少年漫画,少女漫画,恋爱漫画,悬疑漫画,热血漫画,搞笑漫画,漫画排行榜">
+<meta name="author" content="91漫画">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#e03131">
+<link rel="canonical" href="https://www.91manhua.cn/">
+<link rel="apple-touch-icon" href="/favicon.ico">
+<meta property="og:site_name" content="91漫画">
+<meta property="og:type" content="website">
+<meta property="og:title" content="91漫画 - 漫画大全在线阅读">
+<meta property="og:description" content="91漫画每日更新少年漫画、少女漫画、恋爱、悬疑与热血漫画，提供章节列表与漫画排行榜。">
+<meta property="og:url" content="https://www.91manhua.cn/">
+<meta property="og:image" content="https://www.91manhua.cn/favicon.ico">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="91漫画">
+<meta name="twitter:description" content="少年漫画、少女漫画、恋爱悬疑热血搞笑，章节每日更新，手机端自适应。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --paper:#fbf9f4;--bg:#f0ede4;--panel:#ffffff;
+  --ink:#17130f;--ink2:#3a332c;
+  --red:#e03131;--yellow:#ffd43b;--cyan:#22b8cf;--green:#51cf66;--violet:#845ef7;--orange:#ff922b;
+  --dim:#6b6157;--faint:#9c9184;
+  --line:#17130f;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  --mono:"Courier New",Courier,Menlo,Consolas,monospace;
+  --dots:radial-gradient(circle,rgba(23,19,15,.16) 1px,transparent 1.1px);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.76;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative
+}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.7;
+  background-image:var(--dots);background-size:5px 5px}
+body:after{content:"";position:fixed;left:-10%;right:-10%;top:-26%;height:66%;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 100%,rgba(224,49,49,.10),transparent 70%)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px;position:relative;z-index:3}
+main,header,footer{position:relative;z-index:3}
+
+/* 网点刊头条 */
+.toneband{display:block;height:10px;background:var(--ink);
+  background-image:var(--dots);background-size:5px 5px;background-color:var(--ink);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+
+/* ============ 顶栏 ============ */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:2.5px solid var(--ink)}
+.topbar .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo .bub{
+  flex:0 0 auto;position:relative;width:34px;height:28px;background:var(--ink);border-radius:6px;
+  display:grid;place-items:center
+}
+.logo .bub:before{content:"";position:absolute;bottom:-6px;left:8px;width:0;height:0;
+  border:6px solid transparent;border-top-color:var(--ink);border-right-width:9px}
+.logo .bub i{
+  position:relative;z-index:2;font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;font-style:normal;
+  letter-spacing:0
+}
+.logo b{font-size:21px;font-weight:900;letter-spacing:1px;display:block;line-height:1.15;white-space:nowrap}
+.logo b i{font-style:normal;color:var(--red)}
+.logo small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.6px;color:var(--faint)}
+.nav{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{font-size:14px;white-space:nowrap;padding:8px 13px;color:var(--dim);transition:.22s}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--red);font-weight:800}
+.nav a.on:after{content:"";display:block;height:3px;margin-top:4px;background:var(--red)}
+.nav-btn{display:none;flex:0 0 auto;padding:8px 14px;cursor:pointer;border:2.5px solid var(--ink);color:var(--ink);
+  background:var(--yellow);font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:1px;border-radius:6px}
+
+/* ============ 首屏：摊开的漫画本 ============ */
+.hero{padding:26px 0 6px}
+.book{
+  max-width:920px;margin:0 auto;background:var(--paper);border:2.5px solid var(--ink);
+  display:grid;grid-template-columns:1fr 268px;position:relative;overflow:hidden;
+  box-shadow:0 16px 34px rgba(23,19,15,.16)
+}
+.book .spine{
+  position:absolute;right:268px;top:0;bottom:0;width:26px;z-index:5;pointer-events:none;
+  background:linear-gradient(90deg,rgba(23,19,15,0) 0,rgba(23,19,15,.16) 45%,rgba(23,19,15,.05) 70%,rgba(23,19,15,0) 100%)
+}
+.book .pgl{padding:24px 26px 26px;position:relative}
+.book .pgl:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:var(--dots);background-size:6px 6px}
+.book .pgr{padding:18px;border-left:2.5px solid var(--ink);background:var(--panel);position:relative}
+.book .pgr:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:var(--dots);background-size:5px 5px}
+.masthead{
+  position:relative;z-index:3;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;
+  letter-spacing:2px;color:#fff;background:var(--ink);padding:5px 12px;border-radius:4px
+}
+.masthead i{width:9px;height:9px;background:var(--yellow);border-radius:50%;display:block;
+  animation:dot 2.6s ease-in-out infinite}
+@keyframes dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+h1{font-size:clamp(25px,5.8vw,40px);line-height:1.3;font-weight:900;letter-spacing:0;margin-top:14px;position:relative;z-index:3}
+h1 i{font-style:normal;color:var(--red);
+  -webkit-text-stroke:0}
+h1 small{display:block;font-size:14.5px;font-weight:400;letter-spacing:.4px;color:var(--dim);margin-top:12px;line-height:2}
+.search{margin-top:18px;display:flex;align-items:stretch;border:2.5px solid var(--ink);background:#fff;position:relative;z-index:3;border-radius:6px;overflow:hidden}
+.search input{flex:1;min-width:0;height:46px;border:0;outline:none;background:transparent;padding:0 15px;font-size:14.5px;color:var(--ink)}
+.search input::placeholder{color:var(--faint)}
+.search button{flex:0 0 auto;border:0;border-left:2.5px solid var(--ink);cursor:pointer;height:46px;padding:0 26px;
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:2px;color:var(--ink);background:var(--yellow)}
+.search button:hover{background:#f5c518}
+
+/* 右页：分镜格拼贴 */
+.panels{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:106px 74px 74px;gap:5px;position:relative;z-index:3}
+.panels .p{border:2.5px solid var(--ink);position:relative;overflow:hidden;background:#fff}
+.panels .p.a{grid-column:1 / span 2}
+.panels .p .dot{position:absolute;inset:0;background-image:var(--dots);background-size:5px 5px;opacity:.55}
+.panels .p .burst{
+  position:absolute;inset:-40%;
+  background:repeating-conic-gradient(from 0deg at 50% 50%,var(--ink) 0 1.2deg,transparent 1.2deg 7deg);
+  -webkit-mask-image:radial-gradient(circle,transparent 16%,#000 46%);
+  mask-image:radial-gradient(circle,transparent 16%,#000 46%);opacity:.85
+}
+.panels .p .diag{position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,var(--ink) 0 3px,transparent 3px 9px);opacity:.28}
+.panels .p .solid{position:absolute;inset:0}
+.panels .p.a .solid{background:linear-gradient(150deg,#ffb3b3,var(--red) 65%,#a51111)}
+.panels .p.c .solid{background:linear-gradient(150deg,#fff3bf,var(--yellow) 70%,#e0a800)}
+.panels .p.d .solid{background:linear-gradient(150deg,#c5f6fa,var(--cyan) 70%,#0b7285)}
+.panels .p.e .solid{background:linear-gradient(150deg,#d3f9d8,var(--green) 70%,#2b8a3e)}
+.panels .p .bub{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;
+  background:#fff;border:2.5px solid var(--ink);border-radius:10px;padding:4px 9px;
+  font-size:11px;font-weight:800;white-space:nowrap
+}
+.panels .p .bub:before{content:"";position:absolute;bottom:-8px;left:12px;width:0;height:0;
+  border:8px solid transparent;border-top-color:var(--ink)}
+.panels .p .bub:after{content:"";position:absolute;bottom:-4px;left:13px;width:0;height:0;
+  border:6px solid transparent;border-top-color:#fff}
+.panels .p .num{
+  position:absolute;right:4px;bottom:2px;z-index:4;font-family:var(--mono);font-size:10px;color:#fff;
+  background:var(--ink);padding:1px 5px;border-radius:3px
+}
+.book .pgr .curl{
+  position:absolute;right:0;bottom:0;width:34px;height:34px;z-index:6;
+  background:linear-gradient(135deg,transparent 48%,var(--bg) 50%,var(--paper) 52%);
+  border-left:2.5px solid var(--ink);border-top:2.5px solid var(--ink)
+}
+.book .pgr .cap{
+  position:relative;z-index:4;margin-top:10px;text-align:center;font-family:var(--mono);font-size:10px;
+  letter-spacing:2px;color:var(--faint)
+}
+.tags{margin-top:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font-size:12.5px}
+.tags a{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border:2px solid var(--ink);
+  background:#fff;color:var(--ink2);transition:.22s;border-radius:6px}
+.tags a:hover{background:var(--yellow)}
+.tags a s{width:10px;height:10px;display:block;text-decoration:none;border:2px solid var(--ink);border-radius:50%}
+.tags a:nth-child(2) s{background:var(--red)}
+.tags a:nth-child(3) s{background:var(--cyan)}
+.tags a:nth-child(4) s{background:var(--green)}
+.tags a:nth-child(5) s{background:var(--violet)}
+.tags a:nth-child(6) s{background:var(--orange)}
+.stats{margin:22px auto 0;max-width:780px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stats div{background:#fff;border:2.5px solid var(--ink);padding:13px 8px;text-align:center;position:relative;overflow:hidden;border-radius:6px}
+.stats div:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-bottom:2.5px solid var(--ink)}
+.stats div:nth-child(1):before{background:var(--red)}
+.stats div:nth-child(2):before{background:var(--yellow)}
+.stats div:nth-child(3):before{background:var(--cyan)}
+.stats div:nth-child(4):before{background:var(--green)}
+.stats b{display:block;font-family:var(--mono);font-size:19px;font-weight:700}
+.stats span{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--faint)}
+
+/* ============ 区块头 ============ */
+section{padding:40px 0 0}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;flex-wrap:wrap}
+.kno{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;font-weight:700;
+  letter-spacing:1.2px;padding:6px 15px;color:#fff;background:var(--ink);border-radius:6px
+}
+.kno .mini{width:12px;height:12px;border:2px solid #fff;border-radius:50%;background:var(--yellow)}
+.kno em{font-style:normal}
+.kno u{text-decoration:none;color:rgba(255,255,255,.55)}
+h2{font-size:20px;font-weight:900;letter-spacing:1.5px}
+.sec-head .en{font-family:var(--mono);font-size:10.5px;letter-spacing:3px;color:var(--faint)}
+.sec-head .ln{flex:1;min-width:16px;height:10px;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);opacity:.25}
+.sec-head .more{font-family:var(--mono);font-size:12px;letter-spacing:1px;border:2.5px solid var(--ink);
+  background:#fff;padding:5px 15px;transition:.22s;border-radius:6px}
+.sec-head .more:hover{background:var(--red);border-color:var(--red);color:#fff}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:18px;padding-bottom:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;cursor:pointer;font-size:13px;letter-spacing:1px;padding:8px 18px;background:#fff;
+  border:2px solid var(--ink);color:var(--ink2);transition:.22s;border-radius:6px}
+.tabs button:hover{background:var(--yellow)}
+.tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:800}
+
+/* ============ 卡片 ============ */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr))}
+.card{background:#fff;border:2.5px solid var(--ink);transition:.26s;overflow:hidden;position:relative;border-radius:8px}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(23,19,15,.2)}
+.card:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;z-index:6;border-bottom:2.5px solid var(--ink)}
+.card[data-c="1"]:before{background:var(--red)}
+.card[data-c="2"]:before{background:var(--cyan)}
+.card[data-c="3"]:before{background:var(--yellow)}
+.card[data-c="4"]:before{background:var(--green)}
+.card[data-c="5"]:before{background:var(--violet)}
+.card[data-c="6"]:before{background:var(--orange)}
+.ph{position:relative;aspect-ratio:3/4;margin-top:5px;padding:5px;background:#fff}
+.ph .pn{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.25fr 1fr;gap:4px;height:100%}
+.ph .pn .q{border:2px solid var(--ink);position:relative;overflow:hidden}
+.ph .pn .q.a{grid-column:1 / span 2}
+.ph .q .solid{position:absolute;inset:0}
+.q.a .solid{background:linear-gradient(150deg,#ffb3b3,var(--red) 62%,#8d0d0d)}
+.q.b .solid{background:linear-gradient(150deg,#fff3bf,var(--yellow) 70%,#d9a200)}
+.q.c .solid{background:linear-gradient(150deg,#c5f6fa,var(--cyan) 70%,#0b7285)}
+.q.d .solid{background:linear-gradient(150deg,#d3f9d8,var(--green) 70%,#2b8a3e)}
+.q.e .solid{background:linear-gradient(150deg,#e5dbff,var(--violet) 70%,#5f3dc4)}
+.q.f .solid{background:linear-gradient(150deg,#ffe8cc,var(--orange) 70%,#d9480f)}
+.card[data-c="2"] .q.a .solid{background:linear-gradient(150deg,#c5f6fa,var(--cyan) 62%,#0b7285)}
+.card[data-c="2"] .q.c .solid{background:linear-gradient(150deg,#ffb3b3,var(--red) 70%,#8d0d0d)}
+.card[data-c="3"] .q.a .solid{background:linear-gradient(150deg,#fff3bf,var(--yellow) 62%,#d9a200)}
+.card[data-c="4"] .q.a .solid{background:linear-gradient(150deg,#d3f9d8,var(--green) 62%,#2b8a3e)}
+.card[data-c="5"] .q.a .solid{background:linear-gradient(150deg,#e5dbff,var(--violet) 62%,#5f3dc4)}
+.card[data-c="6"] .q.a .solid{background:linear-gradient(150deg,#ffe8cc,var(--orange) 62%,#d9480f)}
+.ph .q .dot{position:absolute;inset:0;background-image:var(--dots);background-size:5px 5px;opacity:.5}
+.ph .q .diag{position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,var(--ink) 0 2.5px,transparent 2.5px 8px);opacity:.22}
+.ph .q .burst{
+  position:absolute;inset:-40%;
+  background:repeating-conic-gradient(from 0deg at 50% 50%,var(--ink) 0 1.3deg,transparent 1.3deg 8deg);
+  -webkit-mask-image:radial-gradient(circle,transparent 14%,#000 48%);
+  mask-image:radial-gradient(circle,transparent 14%,#000 48%);opacity:.8
+}
+.ph .t{
+  position:absolute;left:9px;bottom:8px;right:9px;z-index:5;font-size:15px;font-weight:900;letter-spacing:.5px;
+  color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.85);line-height:1.35
+}
+.ph .loc{
+  position:absolute;top:9px;left:9px;z-index:6;font-family:var(--mono);font-size:10px;letter-spacing:1px;
+  padding:2px 8px;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:4px
+}
+.ph .sc{
+  position:absolute;top:9px;right:9px;z-index:6;font-family:var(--mono);font-size:11.5px;font-weight:700;
+  padding:2px 7px;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);border-radius:4px
+}
+.cb{padding:11px 12px 14px}
+.cb h3{font-size:15.5px;font-weight:900;letter-spacing:.5px;line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.cb .meta{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:3px;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.cb .note{font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* 网点密度热度 */
+.cb .foot{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:2px dashed rgba(23,19,15,.25)}
+.tone{flex:1;display:flex;gap:4px}
+.tone i{flex:1;height:16px;border:2px solid var(--ink);border-radius:3px;background:#fff}
+.tone i.on{background-image:radial-gradient(circle,var(--ink) 1px,transparent 1.1px);background-size:5px 5px}
+.tone i.on:nth-child(1){background-size:6px 6px}
+.tone i.on:nth-child(2){background-size:5px 5px}
+.tone i.on:nth-child(3){background-size:4px 4px}
+.tone i.on:nth-child(4){background-size:3.4px 3.4px}
+.tone i.on:nth-child(5){background-size:3px 3px}
+.card[data-c="2"] .tone i.on{background-image:radial-gradient(circle,var(--cyan) 1px,transparent 1.1px)}
+.card[data-c="3"] .tone i.on{background-image:radial-gradient(circle,var(--yellow) 1px,transparent 1.1px)}
+.card[data-c="4"] .tone i.on{background-image:radial-gradient(circle,var(--green) 1px,transparent 1.1px)}
+.card[data-c="5"] .tone i.on{background-image:radial-gradient(circle,var(--violet) 1px,transparent 1.1px)}
+.card[data-c="6"] .tone i.on{background-image:radial-gradient(circle,var(--orange) 1px,transparent 1.1px)}
+.cb .foot .heat{font-family:var(--mono);font-size:11px;color:var(--faint);flex:0 0 auto;line-height:1.2}
+.cb .foot .heat b{font-size:13px;color:var(--ink)}
+.card.hide{display:none}
+.empty{display:none;padding:28px;text-align:center;font-size:13.5px;color:var(--dim);
+  border:2.5px dashed var(--ink);background:#fff;border-radius:8px}
+.empty.show{display:block}
+
+/* ============ 今日更新 ============ */
+.log{background:#fff;border:2.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.log .row{
+  display:grid;grid-template-columns:88px 1fr 96px 84px;align-items:center;gap:14px;padding:12px 15px;
+  border-bottom:2px solid rgba(23,19,15,.14);transition:.2s
+}
+.log .row:last-child{border-bottom:0}
+.log .row:hover{background:#fffbe6}
+.log .row .tm{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--red);letter-spacing:1px}
+.log .row .nm{min-width:0}
+.log .row .nm strong{display:block;font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log .row .nm span{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.log .row .tag{font-family:var(--mono);font-size:11px;letter-spacing:1px;padding:3px 10px;text-align:center;
+  color:#fff;background:var(--ink);border-radius:4px}
+.log .row .tag.off{background:var(--faint)}
+.log .row .go{font-size:12px;color:var(--dim);letter-spacing:1px}
+.log .row:hover .go{color:var(--red)}
+
+/* ============ 题材分区 ============ */
+.guide{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.g-item{background:#fff;border:2.5px solid var(--ink);padding:18px;position:relative;transition:.26s;border-radius:8px;overflow:hidden}
+.g-item:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(23,19,15,.18)}
+.g-item .mini{
+  position:relative;width:34px;height:26px;margin-bottom:12px;border:2.5px solid var(--ink);border-radius:4px;
+  background-image:var(--dots);background-size:4px 4px;background-color:var(--yellow)
+}
+.g-item:nth-child(2) .mini{background-color:var(--cyan)}
+.g-item:nth-child(3) .mini{background-color:var(--green)}
+.g-item:nth-child(4) .mini{background-color:var(--violet)}
+.g-item b{display:block;font-size:15.5px;font-weight:900}
+.g-item p{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.8}
+.g-item ul{margin-top:9px;font-size:12.5px;color:var(--dim);line-height:1.9}
+.g-item li:before{content:"▪ ";color:var(--red);font-size:11px}
+.g-item .code{position:absolute;right:14px;top:20px;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;color:var(--faint)}
+
+/* ============ 编辑推荐 ============ */
+.pick{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.pick-item{background:#fff;border:2.5px solid var(--ink);padding:22px;position:relative;transition:.26s;overflow:hidden;border-radius:8px}
+.pick-item:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(23,19,15,.18)}
+.pick-item:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--red);border-right:2.5px solid var(--ink)}
+.pick-item:nth-child(2):before{background:var(--cyan)}
+.pick-item:nth-child(3):before{background:var(--green)}
+.pick-item .k{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:2px;padding:4px 11px;
+  border:2px solid var(--ink);background:var(--yellow);border-radius:4px}
+.pick-item:nth-child(2) .k{background:var(--cyan);color:#08313a}
+.pick-item:nth-child(3) .k{background:var(--green)}
+.pick-item h3{font-size:18.5px;font-weight:900;letter-spacing:.5px;line-height:1.55;margin:13px 0 9px}
+.pick-item p{font-size:13px;color:var(--dim);line-height:1.95}
+.pick-item .go{display:inline-block;margin-top:13px;font-family:var(--mono);font-size:12.5px;letter-spacing:1.5px;color:var(--red)}
+.pick-item:nth-child(2) .go{color:#0b7285}
+.pick-item:nth-child(3) .go{color:#2b8a3e}
+.pick-item .go:after{content:" →"}
+
+/* ============ 排行榜 ============ */
+.rank{display:grid;gap:11px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.rank-item{display:flex;align-items:center;gap:14px;background:#fff;border:2.5px solid var(--ink);padding:11px 15px;transition:.22s;border-radius:8px}
+.rank-item:hover{transform:translateX(4px);box-shadow:0 12px 22px rgba(23,19,15,.16)}
+.rank-item .no{
+  flex:0 0 40px;height:40px;display:grid;place-items:center;position:relative;
+  font-family:var(--mono);font-size:13px;font-weight:700;color:#fff;background:var(--ink);
+  clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)
+}
+.rank-item:nth-child(1) .no{background:var(--red)}
+.rank-item:nth-child(2) .no{background:var(--cyan);color:#08313a}
+.rank-item:nth-child(3) .no{background:var(--yellow);color:var(--ink)}
+.rank-item .info{flex:1;min-width:0}
+.rank-item .info strong{display:block;font-size:15.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-item .info span{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.rank-item .hot{flex:0 0 auto;text-align:right}
+.rank-item .hot b{display:block;font-family:var(--mono);font-size:14px;color:var(--red)}
+.rank-item .hot i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--faint)}
+
+/* ============ 资讯 ============ */
+.news{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.news a{display:flex;gap:13px;align-items:center;background:#fff;border:2.5px solid var(--ink);padding:12px;transition:.24s;border-radius:8px}
+.news a:hover{transform:translateY(-4px);box-shadow:0 14px 24px rgba(23,19,15,.18)}
+.news .thumb{flex:0 0 50px;height:60px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;
+  padding:3px;border:2px solid var(--ink);border-radius:4px;background:#fff}
+.news .thumb span{border-radius:2px}
+.news .thumb span:nth-child(1){background:var(--red)}
+.news .thumb span:nth-child(2){background:var(--yellow)}
+.news .thumb span:nth-child(3){background:var(--cyan)}
+.news .thumb span:nth-child(4){background:var(--green)}
+.news a:nth-child(2) .thumb span:nth-child(1){background:var(--cyan)}
+.news a:nth-child(2) .thumb span:nth-child(2){background:var(--violet)}
+.news a:nth-child(3) .thumb span:nth-child(1){background:var(--green)}
+.news a:nth-child(3) .thumb span:nth-child(2){background:var(--orange)}
+.news a:nth-child(4) .thumb span:nth-child(1){background:var(--violet)}
+.news a:nth-child(4) .thumb span:nth-child(2){background:var(--red)}
+.news h3{font-size:14.5px;font-weight:800;line-height:1.5}
+.news p{font-size:12.5px;color:var(--dim);margin-top:3px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.news time{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.feats{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:11px}
+.feat{background:#fff;border:2.5px solid var(--ink);padding:16px 17px;border-radius:8px;position:relative;padding-top:24px}
+.feat:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;border-bottom:2.5px solid var(--ink)}
+.feat:nth-child(1):before{background:var(--red)}
+.feat:nth-child(2):before{background:var(--yellow)}
+.feat:nth-child(3):before{background:var(--cyan)}
+.feat:nth-child(4):before{background:var(--green)}
+.feat b{display:block;font-size:15.5px;font-weight:900}
+.feat p{font-size:13px;color:var(--dim);margin-top:4px}
+
+/* ============ 页脚 ============ */
+footer{margin-top:46px;border-top:2.5px solid var(--ink);padding-top:18px;color:var(--dim);background:#fff}
+footer .f-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:16px;
+  border-bottom:2px solid rgba(23,19,15,.14);flex-wrap:wrap}
+footer .f-top b{font-size:23px;font-weight:900;letter-spacing:1.5px;color:var(--ink)}
+footer .f-top b i{font-style:normal;color:var(--red)}
+footer .f-top p{font-family:var(--mono);font-size:12.5px;letter-spacing:1.5px;color:var(--faint)}
+footer .f-cols{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));padding:24px 0}
+footer h4{font-family:var(--mono);font-size:11.5px;letter-spacing:2.5px;color:var(--red);margin-bottom:10px;
+  padding-bottom:8px;border-bottom:2px solid rgba(23,19,15,.14)}
+footer li{font-size:13.5px;padding:4px 0}
+footer li a:hover{color:var(--red)}
+.f-bottom{border-top:2px solid rgba(23,19,15,.14);padding:16px 0 32px;font-size:12.5px;text-align:center;line-height:2;color:var(--faint)}
+.f-bottom a{color:var(--dim)}
+.f-bottom a:hover{color:var(--red)}
+
+#toTop{
+  position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:70;display:none;
+  width:46px;height:46px;border:2.5px solid var(--ink);cursor:pointer;background:var(--yellow);color:var(--ink);font-size:17px;border-radius:8px
+}
+#toTop.show{display:block}
+#toTop:hover{background:var(--ink);color:#fff}
+
+.drawer{position:fixed;inset:0;z-index:99;background:rgba(23,19,15,.55);display:none}
+.drawer.open{display:block}
+.drawer .panel{position:absolute;right:0;top:0;bottom:0;width:78%;max-width:290px;background:#fff;padding:20px;overflow:auto}
+.drawer .panel h4{font-family:var(--mono);font-size:10.5px;letter-spacing:2.5px;color:var(--red);margin:16px 0 8px;
+  padding-bottom:6px;border-bottom:2px solid rgba(23,19,15,.14)}
+.drawer .panel a{display:block;padding:11px 14px;font-size:14px;margin-bottom:6px;border:2px solid var(--ink);border-radius:6px;color:var(--ink2)}
+.drawer .panel a:hover{background:var(--ink);color:#fff}
+.drawer .close{position:absolute;right:18px;top:14px;font-size:20px;color:var(--faint);cursor:pointer}
+
+@media (max-width:940px){ .nav{display:none} .nav-btn{display:block} }
+@media (max-width:860px){
+  .book{grid-template-columns:1fr}
+  .book .spine{display:none}
+  .book .pgr{border-left:0;border-top:2.5px solid var(--ink)}
+  .panels{grid-template-rows:96px 68px 68px}
+}
+@media (max-width:640px){
+  body{font-size:14.5px}
+  .hero{padding:20px 0 4px}
+  .book .pgl{padding:18px 15px 22px}
+  .book .pgr{padding:14px}
+  .panels{grid-template-rows:82px 58px 58px;gap:4px}
+  .panels .p .bub{font-size:10px;padding:3px 7px}
+  .panels .p .num{font-size:9px}
+  h1{letter-spacing:-.5px;margin-top:12px}
+  h1 small{margin-top:12px}
+  .search{flex-direction:column}
+  .search input{height:46px;text-align:center}
+  .search button{width:100%;height:46px;border-left:0;border-top:2.5px solid var(--ink);letter-spacing:4px}
+  .stats{grid-template-columns:repeat(2,1fr);gap:9px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .ph{padding:4px}
+  .ph .t{font-size:14px;left:7px;right:7px;bottom:6px}
+  .ph .loc{top:7px;left:7px;font-size:9px;padding:2px 6px}
+  .ph .sc{top:7px;right:7px;font-size:10.5px;padding:2px 6px}
+  .cb{padding:10px 11px 12px}
+  .cb h3{font-size:14.5px}
+  .tone{gap:3px}
+  .tone i{height:14px}
+  section{padding:30px 0 0}
+  .sec-head{gap:9px}
+  .kno{font-size:10.5px;padding:5px 13px}
+  h2{font-size:18px;letter-spacing:1px}
+  .sec-head .en{display:none}
+  .log .row{grid-template-columns:70px 1fr auto;gap:10px;padding:11px 13px}
+  .log .row .go{display:none}
+  .pick-item{padding:18px}
+  .rank-item{padding:11px;gap:11px}
+  .rank-item .no{flex:0 0 34px;height:34px;font-size:12.5px}
+  .news .thumb{flex:0 0 44px;height:54px}
+  .feats{grid-template-columns:1fr}
+}
+@media (min-width:1180px){ .grid{grid-template-columns:repeat(6,1fr)} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://www.91manhua.cn/#website",
+      "url":"https://www.91manhua.cn/",
+      "name":"91漫画",
+      "alternateName":"91漫画网",
+      "description":"91漫画每日更新少年漫画、少女漫画、恋爱、悬疑、热血与搞笑漫画，提供漫画简介、章节列表、题材分区与漫画排行榜。",
+      "inLanguage":"zh-CN",
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":"https://www.91manhua.cn/?s={search_term_string}",
+        "query-input":"required name=search_term_string"
+      }
+    },
+    {
+      "@type":"Organization",
+      "@id":"https://www.91manhua.cn/#org",
+      "name":"91漫画",
+      "url":"https://www.91manhua.cn/",
+      "logo":"https://www.91manhua.cn/favicon.ico"
+    },
+    {
+      "@type":"ItemList",
+      "name":"91漫画热门作品榜",
+      "itemListOrder":"https://schema.org/ItemListOrderDescending",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"第九十一封信"},
+        {"@type":"ListItem","position":2,"name":"墨线少年"},
+        {"@type":"ListItem","position":3,"name":"分镜之外"},
+        {"@type":"ListItem","position":4,"name":"格子里的雨"},
+        {"@type":"ListItem","position":5,"name":"网点小镇"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<header class="topbar">
+  <div class="toneband" aria-hidden="true"></div>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="91漫画首页">
+      <span class="bub" aria-hidden="true"><i>91</i></span>
+      <span>
+        <b>91<i>漫画</i></b>
+        <small>SCREEN TONE · 每日更新</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="on" href="#">首页</a>
+      <a href="#">少年漫画</a>
+      <a href="#">少女漫画</a>
+      <a href="#">恋爱</a>
+      <a href="#">悬疑</a>
+      <a href="#">热血</a>
+      <a href="#">搞笑</a>
+      <a href="#">排行榜</a>
+    </nav>
+    <button class="nav-btn" id="menuBtn" aria-label="打开导航菜单" aria-expanded="false">书架</button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="book">
+      <span class="spine" aria-hidden="true"></span>
+      <div class="pgl">
+        <div class="masthead"><i aria-hidden="true"></i>第 2026 期 · 每日更新</div>
+        <h1>91<i>漫画</i><small>少年漫画 · 少女漫画 · 恋爱悬疑 · 热血搞笑，翻开一格就能看进去。</small></h1>
+        <form class="search" id="searchForm" onsubmit="return false;" role="search">
+          <input id="q" type="search" placeholder="输入漫画名 / 作者 / 题材…" aria-label="搜索漫画">
+          <button type="submit" id="searchBtn">搜索</button>
+        </form>
+      </div>
+      <div class="pgr">
+        <div class="panels" id="panels" role="img" aria-label="漫画分镜格拼贴，上格为红色渐变加集中线，左下为黄色网点格，右下为青蓝斜线格，格内各有一句对白气泡">
+          <div class="p a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span><span class="bub">第 91 话</span><span class="num">01</span></div>
+          <div class="p c"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span><span class="bub">好看！</span><span class="num">02</span></div>
+          <div class="p d"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span><span class="bub">追更中</span><span class="num">03</span></div>
+        </div>
+        <div class="cap">PANEL 01 — 03 / 2026</div>
+        <span class="curl" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="tags">
+      <a href="#"><s aria-hidden="true"></s>第九十一封信</a><a href="#"><s aria-hidden="true"></s>墨线少年</a>
+      <a href="#"><s aria-hidden="true"></s>分镜之外</a><a href="#"><s aria-hidden="true"></s>格子里的雨</a>
+      <a href="#"><s aria-hidden="true"></s>网点小镇</a><a href="#"><s aria-hidden="true"></s>本周热追</a>
+    </div>
+    <div class="stats">
+      <div><b>24860</b><span>收录漫画</span></div>
+      <div><b>3680</b><span>已完结</span></div>
+      <div><b>1280</b><span>连载中</span></div>
+      <div><b>91</b><span>今日更新</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- 01 热门推荐 -->
+  <section class="wrap" id="rec">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 01 话</em><u>/ 09</u></span>
+      <h2>热门推荐</h2>
+      <span class="en">FEATURED</span>
+      <span class="ln"></span>
+      <a class="more" href="#">查看全部</a>
+    </div>
+    <div class="tabs" id="tabs" role="tablist">
+      <button class="on" data-f="all">全部漫画</button>
+      <button data-f="boy">少年</button>
+      <button data-f="girl">少女</button>
+      <button data-f="love">恋爱</button>
+      <button data-f="sus">悬疑</button>
+      <button data-f="fun">搞笑</button>
+    </div>
+    <div class="grid" id="grid">
+      <article class="card" data-c="1" data-f="boy" data-t="第九十一封信 少年漫画 热血 冒险">
+        <a href="#">
+          <div class="ph" role="img" aria-label="第九十一封信封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">少年</span><span class="sc">9.3</span><span class="t">第九十一封信</span></div>
+          <div class="cb"><h3>第九十一封信</h3><p class="meta">热血冒险 · 连载至第91话</p><p class="note">第九十一封信，写给了还没出场的人。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="heat">热度 <b>93</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="2" data-f="love" data-t="墨线少年 恋爱漫画 青春">
+        <a href="#">
+          <div class="ph" role="img" aria-label="墨线少年封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div></div><span class="loc">恋爱</span><span class="sc">8.9</span><span class="t">墨线少年</span></div>
+          <div class="cb"><h3>墨线少年</h3><p class="meta">青春恋爱 · 连载至第68话</p><p class="note">他画的每一笔，都停在她的侧脸。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>88</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="3" data-f="sus" data-t="分镜之外 悬疑漫画 推理">
+        <a href="#">
+          <div class="ph" role="img" aria-label="分镜之外封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div></div><span class="loc">悬疑</span><span class="sc">9.0</span><span class="t">分镜之外</span></div>
+          <div class="cb"><h3>分镜之外</h3><p class="meta">悬疑推理 · 连载至第54话</p><p class="note">格子以外的地方，藏着真正的线索。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="heat">热度 <b>90</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="4" data-f="girl" data-t="格子里的雨 少女漫画 治愈">
+        <a href="#">
+          <div class="ph" role="img" aria-label="格子里的雨封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">少女</span><span class="sc">8.7</span><span class="t">格子里的雨</span></div>
+          <div class="cb"><h3>格子里的雨</h3><p class="meta">少女治愈 · 连载至第42话</p><p class="note">每一格里都下了点雨，都很小声。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>86</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="5" data-f="fun" data-t="网点小镇 搞笑漫画 日常">
+        <a href="#">
+          <div class="ph" role="img" aria-label="网点小镇封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span></div></div><span class="loc">搞笑</span><span class="sc">8.5</span><span class="t">网点小镇</span></div>
+          <div class="cb"><h3>网点小镇</h3><p class="meta">搞笑日常 · 连载至第120话</p><p class="note">镇上的居民，全是用网点画的。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>82</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="6" data-f="boy" data-t="热血十一 热血漫画 竞技">
+        <a href="#">
+          <div class="ph" role="img" aria-label="热血十一封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">热血</span><span class="sc">8.4</span><span class="t">热血十一</span></div>
+          <div class="cb"><h3>热血十一</h3><p class="meta">竞技热血 · 连载至第91话</p><p class="note">第十一人上场，比分才开始动。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>81</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="2" data-f="love" data-t="空白格 恋爱漫画 都市">
+        <a href="#">
+          <div class="ph" role="img" aria-label="空白格封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">恋爱</span><span class="sc">8.3</span><span class="t">空白格</span></div>
+          <div class="cb"><h3>空白格</h3><p class="meta">都市恋爱 · 已完结 全36话</p><p class="note">最好的那一格，什么都没画。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>78</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="3" data-f="sus" data-t="深夜连载 悬疑漫画 惊悚">
+        <a href="#">
+          <div class="ph" role="img" aria-label="深夜连载封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div></div><span class="loc">悬疑</span><span class="sc">8.2</span><span class="t">深夜连载</span></div>
+          <div class="cb"><h3>深夜连载</h3><p class="meta">惊悚悬疑 · 连载至第30话</p><p class="note">更新只在零点，看完就天亮了。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>76</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="4" data-f="girl" data-t="校服第二颗扣子 少女漫画 校园">
+        <a href="#">
+          <div class="ph" role="img" aria-label="校服第二颗扣子封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">少女</span><span class="sc">8.1</span><span class="t">校服第二颗扣子</span></div>
+          <div class="cb"><h3>校服第二颗扣子</h3><p class="meta">校园少女 · 连载至第58话</p><p class="note">第二颗扣子，离心脏最近。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>74</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="5" data-f="fun" data-t="四格食堂 搞笑漫画 四格">
+        <a href="#">
+          <div class="ph" role="img" aria-label="四格食堂封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div></div><span class="loc">搞笑</span><span class="sc">7.9</span><span class="t">四格食堂</span></div>
+          <div class="cb"><h3>四格食堂</h3><p class="meta">四格搞笑 · 连载至第200话</p><p class="note">四格翻完，饭也刚好吃完。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>71</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="6" data-f="boy" data-t="铅笔与刀 少年漫画 格斗">
+        <a href="#">
+          <div class="ph" role="img" aria-label="铅笔与刀封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">少年</span><span class="sc">8.0</span><span class="t">铅笔与刀</span></div>
+          <div class="cb"><h3>铅笔与刀</h3><p class="meta">格斗少年 · 连载至第77话</p><p class="note">一支笔画出来的，也能伤人。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>73</b></span></div></div>
+        </a>
+      </article>
+      <article class="card" data-c="1" data-f="boy" data-t="追更的人 少年漫画 励志">
+        <a href="#">
+          <div class="ph" role="img" aria-label="追更的人封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="loc">少年</span><span class="sc">7.8</span><span class="t">追更的人</span></div>
+          <div class="cb"><h3>追更的人</h3><p class="meta">励志少年 · 连载至第25话</p><p class="note">等更新的日子，也算在故事里。</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="heat">热度 <b>69</b></span></div></div>
+        </a>
+      </article>
+    </div>
+    <div class="empty" id="empty">这一格是空的，换个漫画名或作者再翻一次。</div>
+  </section>
+
+  <!-- 02 今日更新 -->
+  <section class="wrap" id="today">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 02 话</em><u>/ 09</u></span>
+      <h2>今日更新</h2>
+      <span class="en">NEW TODAY</span>
+      <span class="ln"></span>
+      <a class="more" href="#">更新日历</a>
+    </div>
+    <div class="log">
+      <div class="row"><span class="tm">18:00</span><div class="nm"><strong>第九十一封信 第91话</strong><span>少年 · 热血冒险</span></div><span class="tag">今日更新</span><span class="go">查看</span></div>
+      <div class="row"><span class="tm">17:20</span><div class="nm"><strong>墨线少年 第68话</strong><span>恋爱 · 青春</span></div><span class="tag">今日更新</span><span class="go">查看</span></div>
+      <div class="row"><span class="tm">16:00</span><div class="nm"><strong>分镜之外 第54话</strong><span>悬疑 · 推理</span></div><span class="tag">今日更新</span><span class="go">查看</span></div>
+      <div class="row"><span class="tm">14:30</span><div class="nm"><strong>格子里的雨 第42话</strong><span>少女 · 治愈</span></div><span class="tag">今日更新</span><span class="go">查看</span></div>
+      <div class="row"><span class="tm">12:00</span><div class="nm"><strong>空白格 全36话</strong><span>恋爱 · 都市</span></div><span class="tag off">已完结</span><span class="go">查看</span></div>
+      <div class="row"><span class="tm">10:00</span><div class="nm"><strong>网点小镇 第120话</strong><span>搞笑 · 日常</span></div><span class="tag">今日更新</span><span class="go">查看</span></div>
+    </div>
+  </section>
+
+  <!-- 03 题材分区 -->
+  <section class="wrap" id="guide">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 03 话</em><u>/ 09</u></span>
+      <h2>题材分区</h2>
+      <span class="en">GENRE</span>
+      <span class="ln"></span>
+      <a class="more" href="#">站点说明</a>
+    </div>
+    <div class="guide">
+      <article class="g-item">
+        <span class="mini" aria-hidden="true"></span><span class="code">P.01</span>
+        <b>按题材找</b>
+        <p>少年、少女、恋爱、悬疑各占一栏。</p>
+      </article>
+      <article class="g-item">
+        <span class="mini" aria-hidden="true"></span><span class="code">P.02</span>
+        <b>网点看热度</b>
+        <p>网点越密，说明这部追的人越多。</p>
+      </article>
+      <article class="g-item">
+        <span class="mini" aria-hidden="true"></span><span class="code">P.03</span>
+        <b>三段更新</b>
+        <p>10:00 / 14:30 / 18:00 定时上新，不断更。</p>
+      </article>
+      <article class="g-item">
+        <span class="mini" aria-hidden="true"></span><span class="code">P.04</span>
+        <b>全端适配</b>
+        <ul><li><a href="#">手机追更</a></li><li><a href="#">平板与电脑</a></li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- 04 编辑推荐 -->
+  <section class="wrap" id="pick">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 04 话</em><u>/ 09</u></span>
+      <h2>编辑推荐</h2>
+      <span class="en">EDITOR</span>
+      <span class="ln"></span>
+      <a class="more" href="#">全部漫评</a>
+    </div>
+    <div class="pick">
+      <article class="pick-item">
+        <span class="k">新作速递</span>
+        <h3>《第九十一封信》：写给还没出场的人</h3>
+        <p>分镜利落、伏笔扎实，二刷时会有完全不同的观感。</p>
+        <span class="go">读全文</span>
+      </article>
+      <article class="pick-item">
+        <span class="k">恋爱观察</span>
+        <h3>《墨线少年》：每一笔都停在她的侧脸</h3>
+        <p>节奏舒服、人物立体，是今年少见的耐心之作。</p>
+        <span class="go">读全文</span>
+      </article>
+      <article class="pick-item">
+        <span class="k">悬疑推荐</span>
+        <h3>《分镜之外》：格子以外才有线索</h3>
+        <p>细节埋得深、回收干净，适合一口气追完。</p>
+        <span class="go">读全文</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 少年漫画 -->
+  <section class="wrap" id="boy">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 05 话</em><u>/ 09</u></span>
+      <h2>少年漫画</h2>
+      <span class="en">SHONEN</span>
+      <span class="ln"></span>
+      <a class="more" href="#">少年专区</a>
+    </div>
+    <div class="grid">
+      <article class="card" data-c="1"><a href="#"><div class="ph" role="img" aria-label="第九十一封信封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">9.3</span><span class="t">第九十一封信</span></div><div class="cb"><h3>第九十一封信</h3><p class="meta">热血冒险 · 连载至第91话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="heat">热度 <b>93</b></span></div></div></a></article>
+      <article class="card" data-c="6"><a href="#"><div class="ph" role="img" aria-label="热血十一封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.4</span><span class="t">热血十一</span></div><div class="cb"><h3>热血十一</h3><p class="meta">竞技热血 · 连载至第91话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>81</b></span></div></div></a></article>
+      <article class="card" data-c="6"><a href="#"><div class="ph" role="img" aria-label="铅笔与刀封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.0</span><span class="t">铅笔与刀</span></div><div class="cb"><h3>铅笔与刀</h3><p class="meta">格斗 · 连载至第77话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>73</b></span></div></div></a></article>
+      <article class="card" data-c="1"><a href="#"><div class="ph" role="img" aria-label="追更的人封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">7.8</span><span class="t">追更的人</span></div><div class="cb"><h3>追更的人</h3><p class="meta">励志 · 连载至第25话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="heat">热度 <b>69</b></span></div></div></a></article>
+      <article class="card" data-c="3"><a href="#"><div class="ph" role="img" aria-label="起跑线少年封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">8.2</span><span class="t">起跑线少年</span></div><div class="cb"><h3>起跑线少年</h3><p class="meta">竞技 · 连载至第63话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>77</b></span></div></div></a></article>
+      <article class="card" data-c="4"><a href="#"><div class="ph" role="img" aria-label="纸上擂台封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.1</span><span class="t">纸上擂台</span></div><div class="cb"><h3>纸上擂台</h3><p class="meta">格斗 · 连载至第49话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>75</b></span></div></div></a></article>
+    </div>
+  </section>
+
+  <!-- 06 少女漫画 -->
+  <section class="wrap" id="girl">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 06 话</em><u>/ 09</u></span>
+      <h2>少女漫画</h2>
+      <span class="en">SHOJO</span>
+      <span class="ln"></span>
+      <a class="more" href="#">少女专区</a>
+    </div>
+    <div class="grid">
+      <article class="card" data-c="4"><a href="#"><div class="ph" role="img" aria-label="格子里的雨封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.7</span><span class="t">格子里的雨</span></div><div class="cb"><h3>格子里的雨</h3><p class="meta">少女治愈 · 连载至第42话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>86</b></span></div></div></a></article>
+      <article class="card" data-c="4"><a href="#"><div class="ph" role="img" aria-label="校服第二颗扣子封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.1</span><span class="t">校服第二颗扣子</span></div><div class="cb"><h3>校服第二颗扣子</h3><p class="meta">校园 · 连载至第58话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>74</b></span></div></div></a></article>
+      <article class="card" data-c="5"><a href="#"><div class="ph" role="img" aria-label="春日手账封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">8.3</span><span class="t">春日手账</span></div><div class="cb"><h3>春日手账</h3><p class="meta">治愈日常 · 连载至第37话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>79</b></span></div></div></a></article>
+      <article class="card" data-c="2"><a href="#"><div class="ph" role="img" aria-label="玻璃糖封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.0</span><span class="t">玻璃糖</span></div><div class="cb"><h3>玻璃糖</h3><p class="meta">青春 · 连载至第45话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>72</b></span></div></div></a></article>
+      <article class="card" data-c="5"><a href="#"><div class="ph" role="img" aria-label="花名未取封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">7.9</span><span class="t">花名未取</span></div><div class="cb"><h3>花名未取</h3><p class="meta">文艺 · 连载至第28话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>70</b></span></div></div></a></article>
+      <article class="card" data-c="2"><a href="#"><div class="ph" role="img" aria-label="晚自习封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">7.7</span><span class="t">晚自习</span></div><div class="cb"><h3>晚自习</h3><p class="meta">校园 · 已完结 全24话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="heat">热度 <b>67</b></span></div></div></a></article>
+    </div>
+  </section>
+
+  <!-- 07 恋爱悬疑搞笑 -->
+  <section class="wrap" id="more">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 07 话</em><u>/ 09</u></span>
+      <h2>恋爱 · 悬疑 · 搞笑</h2>
+      <span class="en">LOVE / SUS / FUN</span>
+      <span class="ln"></span>
+      <a class="more" href="#">进入专区</a>
+    </div>
+    <div class="grid">
+      <article class="card" data-c="2"><a href="#"><div class="ph" role="img" aria-label="墨线少年封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">8.9</span><span class="t">墨线少年</span></div><div class="cb"><h3>墨线少年</h3><p class="meta">恋爱 · 连载至第68话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>88</b></span></div></div></a></article>
+      <article class="card" data-c="2"><a href="#"><div class="ph" role="img" aria-label="空白格封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q c"><span class="solid" aria-hidden="true"></span></div><div class="q d"><span class="solid" aria-hidden="true"></span><span class="diag" aria-hidden="true"></span></div></div><span class="sc">8.3</span><span class="t">空白格</span></div><div class="cb"><h3>空白格</h3><p class="meta">恋爱 · 全36话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>78</b></span></div></div></a></article>
+      <article class="card" data-c="3"><a href="#"><div class="ph" role="img" aria-label="分镜之外封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">9.0</span><span class="t">分镜之外</span></div><div class="cb"><h3>分镜之外</h3><p class="meta">悬疑 · 连载至第54话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="heat">热度 <b>90</b></span></div></div></a></article>
+      <article class="card" data-c="3"><a href="#"><div class="ph" role="img" aria-label="深夜连载封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="burst" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div></div><span class="sc">8.2</span><span class="t">深夜连载</span></div><div class="cb"><h3>深夜连载</h3><p class="meta">悬疑 · 连载至第30话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>76</b></span></div></div></a></article>
+      <article class="card" data-c="5"><a href="#"><div class="ph" role="img" aria-label="网点小镇封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q e"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">8.5</span><span class="t">网点小镇</span></div><div class="cb"><h3>网点小镇</h3><p class="meta">搞笑 · 连载至第120话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="heat">热度 <b>82</b></span></div></div></a></article>
+      <article class="card" data-c="5"><a href="#"><div class="ph" role="img" aria-label="四格食堂封面"><div class="pn"><div class="q a"><span class="solid" aria-hidden="true"></span><span class="dot" aria-hidden="true"></span></div><div class="q f"><span class="solid" aria-hidden="true"></span></div><div class="q b"><span class="solid" aria-hidden="true"></span></div></div><span class="sc">7.9</span><span class="t">四格食堂</span></div><div class="cb"><h3>四格食堂</h3><p class="meta">搞笑 · 连载至第200话</p><div class="foot"><span class="tone"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="heat">热度 <b>71</b></span></div></div></a></article>
+    </div>
+  </section>
+
+  <!-- 08 排行榜 -->
+  <section class="wrap" id="rank">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 08 话</em><u>/ 09</u></span>
+      <h2>91漫画排行榜</h2>
+      <span class="en">TOP 6</span>
+      <span class="ln"></span>
+      <a class="more" href="#">完整榜单</a>
+    </div>
+    <div class="rank">
+      <div class="rank-item"><span class="no">01</span><div class="info"><strong>第九十一封信</strong><span>热血冒险 · 少年</span></div><div class="hot"><b>118.2万</b><i>人气</i></div></div>
+      <div class="rank-item"><span class="no">02</span><div class="info"><strong>分镜之外</strong><span>悬疑推理 · 悬疑</span></div><div class="hot"><b>109.6万</b><i>人气</i></div></div>
+      <div class="rank-item"><span class="no">03</span><div class="info"><strong>墨线少年</strong><span>青春恋爱 · 恋爱</span></div><div class="hot"><b>102.4万</b><i>人气</i></div></div>
+      <div class="rank-item"><span class="no">04</span><div class="info"><strong>格子里的雨</strong><span>少女治愈 · 少女</span></div><div class="hot"><b>96.1万</b><i>人气</i></div></div>
+      <div class="rank-item"><span class="no">05</span><div class="info"><strong>网点小镇</strong><span>搞笑日常 · 搞笑</span></div><div class="hot"><b>89.5万</b><i>人气</i></div></div>
+      <div class="rank-item"><span class="no">06</span><div class="info"><strong>热血十一</strong><span>竞技热血 · 少年</span></div><div class="hot"><b>81.7万</b><i>人气</i></div></div>
+    </div>
+  </section>
+
+  <!-- 09 漫画资讯 -->
+  <section class="wrap" id="news">
+    <div class="sec-head">
+      <span class="kno"><span class="mini" aria-hidden="true"></span><em>第 09 话</em><u>/ 09</u></span>
+      <h2>漫画资讯</h2>
+      <span class="en">NEWS</span>
+      <span class="ln"></span>
+      <a class="more" href="#">资讯频道</a>
+    </div>
+    <div class="news">
+      <a href="#"><span class="thumb" aria-hidden="true"><span></span><span></span><span></span><span></span></span><div><h3>《第九十一封信》单行本第9卷发售</h3><p>收录第81至91话，附作者后记</p><time datetime="2026-09-26">2026-09-26</time></div></a>
+      <a href="#"><span class="thumb" aria-hidden="true"><span></span><span></span><span></span><span></span></span><div><h3>《分镜之外》宣布进入最终章</h3><p>作者称会用十话收完所有伏笔</p><time datetime="2026-09-24">2026-09-24</time></div></a>
+      <a href="#"><span class="thumb" aria-hidden="true"><span></span><span></span><span></span><span></span></span><div><h3>《网点小镇》动画化决定，明年春季播出</h3><p>制作阵容与先导视觉同步公开</p><time datetime="2026-09-21">2026-09-21</time></div></a>
+      <a href="#"><span class="thumb" aria-hidden="true"><span></span><span></span><span></span><span></span></span><div><h3>漫改观察：从分镜热到剧本稳</h3><p>读者口味变化，改编方开始重视原作节奏</p><time datetime="2026-09-18">2026-09-18</time></div></a>
+    </div>
+    <div class="feats">
+      <div class="feat"><b>按题材分格</b><p>少年少女恋爱悬疑各占一格。</p></div>
+      <div class="feat"><b>全端适配</b><p>手机、平板、电脑自动排版。</p></div>
+      <div class="feat"><b>网点热度</b><p>网点越密，说明追的人越多。</p></div>
+      <div class="feat"><b>每日更新</b><p>91漫画三段时段上新同步。</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <b>91<i>漫画</i></b>
+      <p>https://www.91manhua.cn</p>
+    </div>
+    <div class="f-cols">
+      <div>
+        <h4>关于本站</h4>
+        <ul>
+          <li><a href="#">网站简介</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>漫画分类</h4>
+        <ul>
+          <li><a href="#">少年漫画</a></li>
+          <li><a href="#">少女漫画</a></li>
+          <li><a href="#">恋爱漫画</a></li>
+          <li><a href="#">悬疑漫画</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>题材标签</h4>
+        <ul>
+          <li><a href="#">热血冒险</a></li>
+          <li><a href="#">校园青春</a></li>
+          <li><a href="#">治愈日常</a></li>
+          <li><a href="#">搞笑四格</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>热门入口</h4>
+        <ul>
+          <li><a href="#">漫画排行榜</a></li>
+          <li><a href="#">编辑推荐</a></li>
+          <li><a href="#">今日更新</a></li>
+          <li><a href="#">漫画资讯</a></li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:13.5px;color:var(--dim);padding-bottom:10px;max-width:820px">
+      91漫画（91manhua.cn）致力于为用户提供少年漫画、少女漫画、恋爱、悬疑、热血与搞笑漫画的作品简介、章节列表与在线阅读导航服务，本站仅提供信息索引，不存储任何漫画资源。
+    </p>
+    <div class="f-bottom">
+      <p><a href="#">网站地图</a> · <a href="#">标签云</a> · <a href="#">留言反馈</a> · <a href="#">隐私政策</a></p>
+      <p>© 2026 91漫画 91manhua.cn　本站内页链接均为演示占位</p>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部">↑</button>
+
+<div class="drawer" id="drawer">
+  <div class="panel">
+    <span class="close" id="closeDrawer" aria-label="关闭菜单">✕</span>
+    <h4>书架导航</h4>
+    <a href="#">首页</a><a href="#">少年漫画</a><a href="#">少女漫画</a><a href="#">恋爱</a>
+    <a href="#">悬疑</a><a href="#">热血</a><a href="#">搞笑</a><a href="#">排行榜</a>
+    <h4>快捷入口</h4>
+    <a href="#today">今日更新</a><a href="#guide">题材分区</a><a href="#rank">人气排行榜</a><a href="#">登录 / 注册</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#grid .card'));
+  var tabs  = document.querySelectorAll('#tabs button');
+  var empty = document.getElementById('empty');
+  var q     = document.getElementById('q');
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var f  = document.querySelector('#tabs button.on').getAttribute('data-f');
+    var n  = 0;
+    cards.forEach(function(c){
+      var okF = (f === 'all') || (c.getAttribute('data-f') === f);
+      var t   = (c.getAttribute('data-t') || '') + ' ' + c.querySelector('h3').textContent;
+      var okK = !kw || t.toLowerCase().indexOf(kw) > -1;
+      var ok  = okF && okK;
+      c.classList.toggle('hide', !ok);
+      if(ok) n++;
+    });
+    empty.classList.toggle('show', n === 0);
+  }
+  tabs.forEach(function(b){
+    b.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); apply();
+    });
+  });
+  q.addEventListener('input', apply);
+  document.getElementById('searchBtn').addEventListener('click', apply);
+  document.getElementById('searchForm').addEventListener('submit', function(e){ e.preventDefault(); apply(); });
+
+  var drawer = document.getElementById('drawer');
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    drawer.classList.add('open'); this.setAttribute('aria-expanded','true');
+  });
+  document.getElementById('closeDrawer').addEventListener('click', function(){ drawer.classList.remove('open'); });
+  drawer.addEventListener('click', function(e){ if(e.target === drawer) drawer.classList.remove('open'); });
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){ toTop.classList.toggle('show', window.scrollY > 400); }, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+  var links = document.querySelectorAll('.nav a');
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      links.forEach(function(x){ x.classList.remove('on'); });
+      a.classList.add('on');
+    });
+  });
+})();
+</script>
+</body>
+</html>
